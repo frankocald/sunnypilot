@@ -53,6 +53,7 @@ class UIStateSP:
     self.standstill_timer: bool = False
     self.sunnylink_enabled: bool = False
     self.torque_bar: bool = False
+    self.show_confidence_ball: bool = True
     self.enforce_torque_control: bool = False
     self.custom_torque_params: bool = False
     self.torque_override_enabled: bool = False
@@ -160,6 +161,7 @@ class UIStateSP:
     self.standstill_timer = self.params.get_bool("StandstillTimer")
     self.sunnylink_enabled = self.params.get_bool("SunnylinkEnabled")
     self.torque_bar = self.params.get_bool("TorqueBar")
+    self.show_confidence_ball = self.params.get_bool("ShowConfidenceBall")
     self.enforce_torque_control = self.params.get_bool("EnforceTorqueControl")
     self.custom_torque_params = self.params.get_bool("CustomTorqueParams")
     self.torque_override_enabled = self.params.get_bool("TorqueParamsOverrideEnabled")
