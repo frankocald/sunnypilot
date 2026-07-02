@@ -56,6 +56,8 @@ class AugmentedRoadView(CameraView, AugmentedRoadViewSP):
     self._hud_renderer = HudRenderer()
     self.alert_renderer = AlertRenderer()
     self.driver_state_renderer = DriverStateRenderer()
+    from openpilot.selfdrive.ui.mici.onroad.confidence_ball import ConfidenceBall
+    self._confidence_ball = ConfidenceBall()
 
   def _render(self, rect):
     # Only render when system is started to avoid invalid data access
@@ -99,6 +101,8 @@ class AugmentedRoadView(CameraView, AugmentedRoadViewSP):
 
     # End clipping region
     rl.end_scissor_mode()
+
+    self._confidence_ball.render(rect)
 
     # Draw colored border based on driving state
     self._draw_border(rect)
